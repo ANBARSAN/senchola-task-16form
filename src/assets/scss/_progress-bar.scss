@@ -1,0 +1,69 @@
+@use "./variables" as *;
+.progressbar {
+  display: flex;
+  user-select: none;
+  font-size: $font-size-standard;
+  font-weight: $font-weight-none;
+  color: $primary-color;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.progress-steps {
+  display: inline-block;
+  padding-left: $font-size-base;
+  padding-right: $font-size-base;
+}
+.progress-circle {
+  display: inline-block;
+  padding: $border-width-xlarge;
+  border: $border-width-small solid $color-alert;
+  height: $box-height-small;
+  width: $box-height-small;
+  display: inline-block !important;
+  border-radius: 50%;
+  background: $secondary-color;
+  opacity: 0.5;
+  margin-top: $border-width-between;
+}
+.wrapper-circle {
+  height: $box-height-medium;
+  width: $box-height-medium;
+  border-radius: 50%;
+  border: $border-width-small solid $third-color;
+  display: inline-block !important;
+}
+.wrapper-circle-active {
+  border: $border-width-small solid $color-alert;
+}
+
+.progress-line {
+  margin-top: $box-height-vsmall;
+  display: inline-block;
+  height: $border-width-small;
+  width: 50%;
+  background: $color-alert;
+  opacity: 0.5;
+}
+.progress-circle-active {
+  background: red;
+  opacity: 1;
+  color: $third-color;
+}
+.progress-line-active {
+  height: $border-width-medium;
+  background: red;
+  opacity: 1;
+  transform-origin: left;
+  animation: animate 1s linear forwards;
+  transform: scaleX(0);
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.progress-content {
+  font-size: $font-size-base;
+}

@@ -1,0 +1,34 @@
+<td>
+                <div className="image-uploader">
+                  <p className="signature">
+                    {/* Signature pad  */}
+                    <SignaturePad
+                      redrawOnResize
+                      placeholder="signature"
+                      ref={signaturePadRef}
+                      options={{ penColor: "rgb(66,133,244)" }}
+                    />
+                  </p>
+                  {/* signature pad clear button */}
+                  <button
+                    onClick={() => {
+                      signaturePadRef.current.clear();
+                    }}
+                    className="signButtons"
+                  >
+                    clear
+                  </button>
+                  {/* signature pad upload button */}
+                  <button
+                    onClick={() => {
+                      signaturePadRef.current.toDataURL();
+                      const data = signaturePadRef.current.toData();
+                      dispatch(sign(data.length));
+                      signaturePadRef.current.clear();
+                    }}
+                    className="signButtons"
+                  >
+                    upload
+                  </button>
+                </div>
+              </td>

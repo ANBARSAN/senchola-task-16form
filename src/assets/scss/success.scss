@@ -1,0 +1,33 @@
+@use "./variables" as *; // * removes need to call namespace
+@use "./mixin" as *; // * removes need to call namespace
+@use "./progress-bar" as *; // * removes need to call namespace
+
+// page content wrapper
+
+.success-wrapper {
+  display: inline-block;
+  height: 70vh;
+  width: 90vw;
+  margin-left: 5%;
+  background-color: $secondary-color;
+}
+.success-box {
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  background-color: white;
+}
+.success-image,
+.final-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  //   align-self: center;
+}
+.title,
+.description {
+  margin: 2% auto;
+  text-align: center;
+}
